@@ -10,8 +10,10 @@ export const MovieDetail = () => {
     : Backup;
 
   useEffect(()=>{
+    if (movie?.title){
     document.title=`${movie.title} / Cinemate`
-  },[])
+    }
+  },[movie?.title])
 
 
   useEffect(() => {
@@ -23,8 +25,8 @@ export const MovieDetail = () => {
       setMovie(data);
     };
 
-    fetchData();
-  }, []);
+    if(params?.id)fetchData();
+  }, [params?.id]);
   return (
     <main>
       <section className="flex justify-around flex-wrap py-5 gap-20">
