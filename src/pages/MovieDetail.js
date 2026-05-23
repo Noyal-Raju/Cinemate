@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import { useFetch } from "../hooks/useFetch";
 import { useEffect, useState } from "react";
 import Backup from "../assests/backup.png";
 
@@ -12,7 +11,7 @@ export const MovieDetail = () => {
 
   useEffect(()=>{
     document.title=`${movie.title} / Cinemate`
-  })
+  },[])
 
 
   useEffect(() => {
